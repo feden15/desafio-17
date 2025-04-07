@@ -1,6 +1,4 @@
-const { useEffect } = require("react");
-const { useState } = require("react");
-const { createContext } = require("react");
+import { createContext, useEffect, useState } from "react";
 
 const UsuariosContext = createContext()
 

@@ -1,9 +1,12 @@
-import { useState } from 'react'
+import { createContext, useState } from 'react'
 import Filas from './Filas'
 import Spinner from './Spinner'
 import ModalDetalleUsuario from './ModalDetalleUsuario'
+import UsuariosContext from '../contexts/UsuariosContext'
 
-const TablaUsuarios = ({ usuarios, borrarUsuario, setUsuarioAEditar }) => {
+const TablaUsuarios = () => {
+
+    const { usuarios } = createContext(UsuariosContext)
 
     const [usuarioSeleccionado, setUsuarioSeleccionado] = useState(null)
     const [mostrarModal, setMostrarModal] = useState(false)
@@ -35,10 +38,7 @@ const TablaUsuarios = ({ usuarios, borrarUsuario, setUsuarioAEditar }) => {
                         {
                             usuarios.map((usuarios) => (
                                 <Filas
-                                    usuarios={usuarios}
                                     key={usuarios.id}
-                                    borrarUsuario={borrarUsuario}
-                                    setUsuarioAEditar={setUsuarioAEditar}
                                     verUsuario={handleVer}
                                 />
                             ))

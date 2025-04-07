@@ -1,6 +1,10 @@
+import { useContext } from "react";
 import Swal from "sweetalert2";
+import UsuariosContext from "../contexts/UsuariosContext";
 
-const Filas = ({ usuarios, borrarUsuario, setUsuarioAEditar, verUsuario }) => {
+const Filas = ({ verUsuario }) => {
+
+    const { usuarios, borrarUsuario, setUsuarioAEditar } = useContext(UsuariosContext)
 
     const handleEliminar = async (id) => {
 
